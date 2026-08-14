@@ -3,75 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Química - Prof. Paulo Ribeiro de Oliveira| Espaço de Aprendizado</title>
-  
-  <!-- Fonte Google Fonts -->
+  <title>Portal de Ensino | Prof. Paulo Ribeiro de Oliveira</title>
+  <!-- Vinculação do arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte externa (Inter) para um visual moderno e legível -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- VÍNCULO COM O ARQUIVO CSS EXTERNO -->
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <main class="container">
-    
-    <!-- Cabeçalho -->
-    <header>
-      <h1>🧪 Espaço Didático de Química</h1>
-      <p>Acesse o material de estudo, faça os exercícios e confira o gabarito.</p>
-    </header>
+  <!-- CABEÇALHO DA PÁGINA -->
+  <header class="header">
+    <div class="header-container">
+      <div class="header-brand">
+        <span class="icon">🧪</span>
+        <div>
+          <h1>Professor Paulo Ribeiro de Oliveira</h1>
+          <p class="subtitle">Portal de Aprendizagem e Recursos Didáticos de Química</p>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- ÍTEM 1: TEMA -->
-    <section class="tema-card">
-      <div class="tema-icon">⚗️</div>
-      <div class="tema-content">
-        <h2>Tema da Aula</h2>
-        <h3>Técnicas de extrações</h3>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-container">
+
+    <!-- CARD INFORMATIVO / BOAS-VINDAS -->
+    <section class="intro-card">
+      <h2>👋 Espaço de Aprendizagem Ativa</h2>
+      <p>
+        Utilize os botões abaixo para acessar o material didático de cada disciplina: 
+        <strong>AULA</strong> para apresentação dos conteúdos, 
+        <strong>PROBLEMA TEMA</strong> para exercícios práticos e 
+        <strong>SOLUÇÃO</strong> para resoluções comentadas.
+      </p>
+    </section>
+
+    <!-- LISTA DE TURMAS E COMPONENTES CURRICULARES -->
+    <section class="classes-section">
+      <h2 class="section-title">📚 Turmas e Componentes Curriculares</h2>
+
+      <div class="cards-list">
+
+        <!-- TURMA 1 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 1QAT1</span>
+            <h3 class="subject-title">Química Inorgânica</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
+        <!-- TURMA 2 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 1QAT1</span>
+            <h3 class="subject-title">Química Orgânica</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
+        <!-- TURMA 3 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 3QMA1</span>
+            <h3 class="subject-title">Química Inorgânica</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
+        <!-- TURMA 4 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 3BAM1</span>
+            <h3 class="subject-title">Análise Ambiental</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
+        <!-- TURMA 5 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 3BAM1</span>
+            <h3 class="subject-title">Química Analítica Aplicada</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
+        <!-- TURMA 6 -->
+        <article class="class-card">
+          <div class="class-info">
+            <span class="badge">Turma: 3BAM2</span>
+            <h3 class="subject-title">Química Inorgânica</h3>
+          </div>
+          <div class="actions-group">
+            <a href="https://drive.google.com/file/d/1jh9etyWbQnMTE7wdCf4CeQPhZiBpBRl3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-aula">
+              📖 AULA
+            </a>
+            <a href="https://drive.google.com/file/d/1g2zupqTvJw-mQmKQplA-l6JW0proGOyI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-problema">
+              ❓ PROBLEMA TEMA
+            </a>
+            <a href="https://drive.google.com/file/d/1vCdsZXztHAdAVfx8BzxCHStiO0YZMTRY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-solucao">
+              💡 SOLUÇÃO
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- CONTAINER DOS BOTÕES (ÍTEMS 2, 3 e 4) -->
-    <section class="botoes-container">
-      
-      <!-- ÍTEM 2: BOTÃO AULA -->
-      <a href="https://drive.google.com/file/d/1o_TpJURwphF8yYfGG4hqJx7CJuJf_Q_L/view?usp=sharing" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="btn btn-aula">
-        <span class="btn-icon">📚</span>
-        <span>AULA</span>
-        <span class="btn-subtext">Material de Apoio e Teoria</span>
-      </a>
-
-      <!-- ÍTEM 3: BOTÃO EXERCÍCIOS -->
-      <a href="https://drive.google.com/file/d/14kdfus1B7xLVgmIlCY5WAEBQawNagbpn/view?usp=sharing" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="btn btn-exercicios">
-        <span class="btn-icon">📝</span>
-        <span>EXERCÍCIOS</span>
-        <span class="btn-subtext">Lista de Atividades</span>
-      </a>
-
-      <!-- ÍTEM 4: BOTÃO SOLUÇÃO -->
-      <a href="https://drive.google.com/file/d/1RKDh3mvRzBTSO7D_9ewMdWIo8meeierk/view?usp=sharing" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="btn btn-solucao">
-        <span class="btn-icon">✅</span>
-        <span>SOLUÇÃO</span>
-        <span class="btn-subtext">Gabarito e Resoluções</span>
-      </a>
-
-    </section>
-
-    <footer>
-      Química Interativa • Bom aprendizado!
-    </footer>
-
   </main>
+
+  <!-- RODAPÉ DA PÁGINA -->
+  <footer class="footer">
+    <p>© Professor Paulo Ribeiro de Oliveira | Portal de Apoio ao Ensino de Química</p>
+  </footer>
 
 </body>
 </html>
