@@ -1,196 +1,297 @@
-/* =========================================================
-   1. CONFIGURAÇÕES GERAIS E RESET
-   ========================================================= */
+/* ==========================================================================
+   1. RESET BÁSICO E VARIÁVEIS CSS (DESIGN SYSTEM)
+   ========================================================================== */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
+:root {
+  /* Paleta de Cores */
+  --primary-color: #0f172a;       /* Azul Escuro (Cabeçalho/Rodapé) */
+  --accent-blue: #2563eb;         /* Azul (Botão AULA) */
+  --accent-amber: #d97706;        /* Âmbar/Laranja (Botão PROBLEMA TEMA) */
+  --accent-emerald: #059669;      /* Verde (Botão SOLUÇÃO) */
+  --bg-start: #f8fafc;            /* Fundo suave da página */
+  --bg-end: #e2e8f0;
+  
+  /* Cores Neutras */
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Bordas e Sombras */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+  
+  /* Animação */
+  --transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   2. CORPO DA PÁGINA (BODY) - FLEXBOX VERTICAL
+   ========================================================================== */
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  color: var(--text-primary);
   min-height: 100vh;
-  
-  /* FLEXBOX NO BODY: Centraliza o cartão no meio da tela */
+  line-height: 1.5;
+
+  /* FLEXBOX NO BODY:
+     Cria um layout de coluna e garante que o rodapé fique sempre na base (Sticky Footer) */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
-/* =========================================================
-   2. CARTÃO PRINCIPAL (CONTAINER)
-   ========================================================= */
-.container {
-  background-color: #ffffff;
-  color: #334155;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-
-  /* FLEXBOX NO CONTAINER: Organiza os elementos verticais com espaço constante */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-/* =========================================================
-   3. CABEÇALHO DA PÁGINA
-   ========================================================= */
-header {
-  text-align: center;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  color: #0f172a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-header p {
-  color: #64748b;
-  font-size: 0.95rem;
-  margin-top: 5px;
-}
-
-/* =========================================================
-   4. ÍTEM 1: SEÇÃO DO TEMA DA AULA
-   ========================================================= */
-.tema-card {
-  background: #f1f5f9;
-  border-left: 6px solid #0d9488;
-  border-radius: 12px;
-  padding: 20px;
-  width: 100%;
-  
-  /* FLEXBOX NO TEMA: Alinha o ícone e o texto lado a lado */
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.tema-icon {
-  font-size: 2rem;
-  background: #ccfbf1;
-  color: #0d9488;
-  padding: 12px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tema-content h2 {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #0d9488;
-  margin-bottom: 3px;
-}
-
-.tema-content h3 {
-  font-size: 1.3rem;
-  color: #1e293b;
-}
-
-/* =========================================================
-   5. ÁREA DOS BOTÕES (FLEXBOX RESPONSIVO)
-   ========================================================= */
-.botoes-container {
-  width: 100%;
-  
-  /* FLEXBOX NOS BOTÕES: Distribui os botões e permite quebra de linha em telas pequenas */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Estilo Base dos Botões */
-.btn {
-  flex: 1; /* Todos os botões ocupam a mesma proporção de espaço */
-  min-width: 220px; /* Largura mínima antes de adaptar para o celular */
-  padding: 20px 15px;
-  border-radius: 14px;
-  text-decoration: none;
+/* ==========================================================================
+   3. CABEÇALHO (HEADER) - FLEXBOX HORIZONTAL
+   ========================================================================== */
+.header {
+  background-color: var(--primary-color);
   color: #ffffff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  
-  /* FLEXBOX INTERNO DO BOTÃO: Alinha o ícone, título e subtítulo centralizados */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow-md);
 }
 
-/* Efeito ao passar o mouse */
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  
+  /* FLEXBOX: Alinha o logo/ícone e o texto lado a lado */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  /* FLEXBOX INTERNO: Junta o ícone de química e os títulos */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-brand .icon {
+  font-size: 2.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-md);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header .subtitle {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   4. ÁREA PRINCIPAL (MAIN)
+   ========================================================================== */
+.main-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  /* FLEXBOX: Ocupa o espaço sobressalente da tela */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card informativo */
+.intro-card {
+  background-color: var(--card-bg);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border-left: 5px solid var(--accent-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.intro-card h2 {
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+.intro-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   5. LISTA DE CARDS - FLEXBOX CONTAINER
+   ========================================================================== */
+.cards-list {
+  /* FLEXBOX: Empilha as turmas verticalmente com espaçamento constante */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* CARD DE TURMA INDIVIDUAL */
+.class-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+
+  /* FLEXBOX CHAVE DO CARD:
+     Distribui as informações da turma (esquerda) e os botões de ação (direita) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite a quebra elegante em telas menores */
+  gap: 1rem;
+}
+
+.class-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+/* Informações da Turma e Disciplina */
+.class-info {
+  /* FLEXBOX: Mantém a badge da turma e o nome da matéria alinhados na mesma linha */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: #eff6ff;
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px; /* Formato Pílula */
+  border: 1px solid #bfdbfe;
+}
+
+.subject-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Grupo de Botões (Lado Direito) */
+.actions-group {
+  /* FLEXBOX: Coloca os 3 botões lado a lado */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   6. BOTÕES DE AÇÃO (AULA, PROBLEMA TEMA, SOLUÇÃO)
+   ========================================================================== */
+.btn {
+  /* FLEXBOX INTERNO: Alinha perfeitamente o texto e o ícone dentro do botão */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.825rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
 .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-md);
 }
 
 .btn:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
 }
 
-/* Ítem 2: Botão AULA */
+/* Estilos Específicos das Cores dos Botões */
 .btn-aula {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-}
-.btn-aula:hover {
-  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  background-color: var(--accent-blue);
 }
 
-/* Ítem 3: Botão EXERCÍCIOS */
-.btn-exercicios {
-  background: linear-gradient(135deg, #d97706, #b45309);
-}
-.btn-exercicios:hover {
-  background: linear-gradient(135deg, #b45309, #92400e);
+.btn-problema {
+  background-color: var(--accent-amber);
 }
 
-/* Ítem 4: Botão SOLUÇÃO */
 .btn-solucao {
-  background: linear-gradient(135deg, #059669, #047857);
-}
-.btn-solucao:hover {
-  background: linear-gradient(135deg, #047857, #065f46);
+  background-color: var(--accent-emerald);
 }
 
-.btn-icon {
-  font-size: 1.8rem;
-}
-
-.btn-subtext {
-  font-size: 0.75rem;
-  font-weight: 400;
-  opacity: 0.9;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-/* =========================================================
-   6. RODAPÉ
-   ========================================================= */
-footer {
-  font-size: 0.85rem;
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+.footer {
+  background-color: var(--primary-color);
   color: #94a3b8;
   text-align: center;
-  margin-top: 10px;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+  margin-top: auto; /* Garante que fique no final da tela no flexbox do body */
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+/* Dispositivos Móveis e Tablets Pequenos (até 768px) */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .class-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn {
+    flex: 1; /* Distribui o tamanho dos botões igualmente no celular */
+    padding: 0.65rem 0.4rem;
+    font-size: 0.775rem;
+  }
+}
+
+/* Telas Muito Pequenas (até 480px) */
+@media (max-width: 480px) {
+  .actions-group {
+    flex-direction: column; /* Empilha os botões verticalmente */
+  }
+
+  .btn {
+    width: 100%; /* Botões ocupam a largura inteira */
+  }
 }
